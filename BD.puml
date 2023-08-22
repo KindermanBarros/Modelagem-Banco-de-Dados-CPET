@@ -1,0 +1,30 @@
+@startuml
+class Carros {
+  + modelo_id : Integer
+  + nome : String
+  + ano : Integer
+  + categoria : String
+  + valor_diaria : Decimal
+}
+
+class Clientes {
+  + cliente_id : Integer
+  + nome : String
+  + email : String
+  + telefone : String
+  + endereco : String
+}
+
+class Alugueis {
+  + aluguel_id : Integer
+  + cliente_id : Integer
+  + modelo_id : Integer
+  + data_inicio : Date
+  + data_fim : Date
+  + valor_total : Decimal
+}
+
+Clientes "1" -- "*" Alugueis : alugou
+Carros "1" -- "*" Alugueis : possui
+
+@enduml
